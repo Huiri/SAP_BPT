@@ -1,0 +1,16 @@
+<mvc:View controllerName="project1.controller.app"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <App id="main_app" class="myAppDemoWT">
+    <pages>
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <mvc:XMLView id="_IDGenXMLView1" viewName="project1.view.HelloPanel"/>
+            <mvc:XMLView id="_IDGenXMLView2" viewName="project1.view.HelloPanel"/>
+
+        </content>
+    </Page>
+    </pages>
+    </App>
+    
+</mvc:View>

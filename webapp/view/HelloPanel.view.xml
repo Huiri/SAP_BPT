@@ -1,0 +1,48 @@
+<mvc:View controllerName="project1.controller.HelloPanel"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+            <Panel id="main_panel" width="auto" headerText="{i18n>HelloPanelTitle}" class="sapUiSmallMargin" accessibleRole="Region">
+                <content >
+                    <Text 
+                        id="main_title" 
+                        text="Hello World"
+                        class="myCustomText sapUiSmallMarginEnd myCustomButton"/>
+                    <Button 
+                        id="main_btn"
+                        text="Click!"
+                        width="5rem"
+                        press="onPress"
+                        class="sapUiResponsiveMargin myCustomButton"
+                    />
+                    <Button
+                        id="main_toast_btn"
+                        class="sapUiResponsiveMargin"
+                        text="Toast Btn"
+                        press="handleMessageToastPress" />
+                        <Button
+                        id="main_toast_btn_test"
+                        class="sapUiResponsiveMargin"
+                        text="Toast Btn_test"
+                        press=".test" />
+                    <Input 
+                        id="main_input"
+                        class="sapUiResponsiveMargin"
+
+                        value="{test>/recipient/name}"
+                        description="Hello {test>/recipient/name}"
+                        valueLiveUpdate="true"
+                        width="15rem"/>
+                    <Input 
+                        class="sapUiSmallMargin"
+
+                        id="main_input2"
+                        value="{test2>/recipient/name2}"
+                        description="Hello {test2>/recipient/name2}"
+                        valueLiveUpdate="true"/>
+
+
+            </content>
+
+        </Panel>
+    
+</mvc:View>
