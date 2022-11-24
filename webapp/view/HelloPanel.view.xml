@@ -14,31 +14,61 @@
                         press="onPress"
                         class="sapUiResponsiveMargin myCustomButton"
                     />
+                     <!-- <Text 
+                        id="main_json_ texttitle" 
+                        text="{test3>//oDatadata/value}"
+                        class="myCustomText sapUiSmallMarginEnd"/>
+                    /> -->
+                    
                     <Button
                         id="main_toast_btn"
                         class="sapUiResponsiveMargin"
                         text="Toast Btn"
-                        press="handleMessageToastPress" />
-                        <Button
+                        press="handleMessageToastPress"
+                        icon="sap-icon://cloud"/>
+                        
+                    <Button
                         id="main_toast_btn_test"
                         class="sapUiResponsiveMargin"
                         text="Toast Btn_test"
                         press=".test" />
+
+                    <Button
+                        id="main_this_btn_test"
+                        class="sapUiResponsiveMargin"
+                        text="Toast Btn_this"
+                        press=".test2" />
+
                     <Input 
                         id="main_input"
                         class="sapUiResponsiveMargin"
-
                         value="{test>/recipient/name}"
                         description="Hello {test>/recipient/name}"
                         valueLiveUpdate="true"
                         width="15rem"/>
+
                     <Input 
                         class="sapUiSmallMargin"
-
                         id="main_input2"
                         value="{test2>/recipient/name2}"
                         description="Hello {test2>/recipient/name2}"
                         valueLiveUpdate="true"/>
+
+                    <Button
+                        id="main_busy_dialog_btn"
+                        text="{i18n>showHelloButtonText}"
+                        width="230px"
+                        press="onOpenBusyDialog"
+                        class="sapUiSmallMarginBottom"
+                        ariaHasPopup="Dialog" />
+
+                    <Button
+                        id="main_dialog_btn"
+                        text="{i18n>showHelloButtonText2}"
+                        width="230px"
+                        press="onOpenDialog"
+                        class="sapUiSmallMarginBottom"
+                        ariaHasPopup="Dialog" />
 
 
             </content>
