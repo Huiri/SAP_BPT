@@ -73,6 +73,10 @@
         "dataSource": "mainService",
         "preload": true,
         "settings": {}
+      },
+      "Request" : {
+        "type" : "sap.ui.model.json.JSONModel",
+        "uri" : "model/RequestOrder.json"
       }
     },
     "resources": {
@@ -94,20 +98,20 @@
       },
       "routes": [
         {
-          "name": "Routeapp",
+          "name": "Request",
           "pattern": ":?query:",
           "target": [
-            "Targetapp"
+            "Request"
           ]
         }
       ],
       "targets": {
-        "Targetapp": {
+        "Request": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
-          "viewId": "app",
-          "viewName": "app"
+          "viewId": "Request",
+          "viewName": "Request"
         }
       }
     },

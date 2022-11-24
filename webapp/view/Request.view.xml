@@ -1,0 +1,95 @@
+<mvc:View 
+    controllerName="project1.controller.Request"
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true"
+    xmlns:ui_table="sap.ui.table"
+    xmlns="sap.m">
+    <!-- xmlns:namespace="라이브러리" 라이브러리 부를 별칭 설정 -->
+    <ui_table:Table 
+        id="ui_table"
+        selectionMode="MultiToggle"
+        rows="{Request>/RequestOrder}" 
+        width="auto">
+        <!-- rows="{Request>/RequestOrder}" => 사용할 데이터를 행에 입력 -->
+
+            <!-- extension 태그 사용하기 위해서는 어떤 태그? -->
+        	<!-- <extension>
+					<OverflowToolbar id="_IDGenOverflowToolbar1" style="Clear">
+						<Title id="title" text="Products"/>
+						<m:ToolbarSpacer id="_IDGenToolbarSpacer1"/>
+						<m:Button id="_IDGenButton1"
+							icon="sap-icon://activities"
+							tooltip="show indices of selected items"
+							press="getSelectedIndices"/>
+						<m:Button id="_IDGenButton2"
+							icon="sap-icon://activity-items"
+							tooltip="show context of latest selection item"
+							press="getContextByIndex"/>
+						<m:Button id="_IDGenButton3"
+							icon="sap-icon://decline"
+							tooltip="clear selection"
+							press="clearSelection"/>
+						<m:Switch id="_IDGenSwitch1"
+							state="true"
+							customTextOn="on"
+							customTextOff="off"
+							tooltip="enable select all items"
+							change="onSwitchChange"/>
+					</OverflowToolbar>
+				</extension> -->
+
+        <ui_table:columns>
+        <!-- col 여러개 생성할 거라서 columns 태그를 상위에 위치시킴 -->
+            
+            <ui_table:Column id="_IDGenColumn1" hAlign="Center">
+                <!-- <Label><Text> sap.m에 존재하기 때문에 namespace:Label || Text 선언 X -->
+                <Label id="_IDGenLabel1" text="요청번호"/>
+                <ui_table:template>
+                <Text id="_IDGenText1" text="{Request>ReqNum}"/>
+                </ui_table:template>  
+            </ui_table:Column>
+
+            <ui_table:Column id="_IDGenColumn2" hAlign="Center">
+                <Label id="_IDGenLabel2" text="요청물품"/>
+                <ui_table:template>
+                <Text id="_IDGenText2" text="{Request>ReqGood}"/>
+                </ui_table:template>
+            </ui_table:Column>
+
+            <ui_table:Column id="_IDGenColumn3" hAlign="Center">
+                <Label id="_IDGenLabel3" text="물품개수"/>
+                <ui_table:template>
+                <Text id="_IDGenText3" text="{Request>ReqQty}"/>
+                </ui_table:template>
+            </ui_table:Column>
+
+            <ui_table:Column id="_IDGenColumn4" hAlign="Center">
+                <Label id="_IDGenLabel4" text="요청자"/>
+                <ui_table:template>
+                <Text id="_IDGenText4" text="{Request>Requester}"/>
+                </ui_table:template>
+            </ui_table:Column>
+
+            <ui_table:Column id="_IDGenColumn5" hAlign="Center">
+                <Label id="_IDGenLabel5" text="요청일자"/>
+                <ui_table:template>
+                <Text id="_IDGenText5" text="{Request>ReqDate}"/>
+                </ui_table:template>
+            </ui_table:Column>
+            
+            <ui_table:Column id="_IDGenColumn6" hAlign="Center">
+                <Label id="_IDGenLabel6" text="처리상태"/>
+                <ui_table:template>
+                <Text id="_IDGenText6" text="{Request>ReqStatus}"/>
+                </ui_table:template>
+            </ui_table:Column>
+        </ui_table:columns>
+
+    </ui_table:Table>
+    <Button text="Indicies" id="btn_selected_indicies" press=".getSelectedIndices"/>
+    <Button text="Context Index" id="btn_selected_Context_Index" press=".getContextByIndex"/>
+    <Button text="Context" id="btn_selected_context" press=".getContext"/>
+
+    
+    
+</mvc:View>
