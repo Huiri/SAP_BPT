@@ -1,15 +1,15 @@
 sap.ui.define([
     'sap/m/MessageToast','sap/ui/core/mvc/Controller', "sap/ui/model/json/JSONModel",
     "sap/m/Dialog", "sap/m/Button", "sap/ui/core/Fragment", "sap/ui/core/syncStyleClass",
-],
+], // 사용할 모듈 선언
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
     
-    function (MessageToast, Controller, JSONModel, Dialog, Button, Fragment, syncStyleClass) {
+    function (MessageToast, Controller, JSONModel, Dialog, Button, Fragment, syncStyleClass) {//파라미터는 별칭 선언
         "use strict";
 
-        return Controller.extend("project1.controller.HelloPanel", {
+        return Controller.extend("project1.controller.HelloPanel", { // 소괄호 안의 경로 파일을 컨트롤러로 사용하겠다는 선언
             onInit: function () {
                 var oData = {
                     recipient : {
@@ -45,7 +45,6 @@ sap.ui.define([
                     student : [
                         {
                             name : "moon"
-
                         }
                     ]
                     

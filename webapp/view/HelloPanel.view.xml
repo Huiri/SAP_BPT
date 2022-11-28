@@ -1,6 +1,8 @@
 <mvc:View controllerName="project1.controller.HelloPanel"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m">
+    //사용할 컨트롤러명 선언 필요 " controllerName=''"
+    //컨트롤러명과 xml 뷰 파일의 이름은 동일하게 하는 것이 원칙
             <Panel id="main_panel" width="auto" headerText="{i18n>HelloPanelTitle}" class="sapUiSmallMargin" accessibleRole="Region">
                 <content >
                     <Text 
@@ -11,7 +13,7 @@
                         id="main_btn"
                         text="Click!"
                         width="5rem"
-                        press="onPress"
+                        press=".onPress"
                         class="sapUiResponsiveMargin myCustomButton"
                     />
                      <!-- <Text 
@@ -24,7 +26,7 @@
                         id="main_toast_btn"
                         class="sapUiResponsiveMargin"
                         text="Toast Btn"
-                        press="handleMessageToastPress"
+                        press=".handleMessageToastPress"
                         icon="sap-icon://cloud"/>
                         
                     <Button
@@ -58,7 +60,7 @@
                         id="main_busy_dialog_btn"
                         text="{i18n>showHelloButtonText}"
                         width="230px"
-                        press="onOpenBusyDialog"
+                        press=".onOpenBusyDialog"
                         class="sapUiSmallMarginBottom"
                         ariaHasPopup="Dialog" />
 
@@ -66,7 +68,7 @@
                         id="main_dialog_btn"
                         text="{i18n>showHelloButtonText2}"
                         width="230px"
-                        press="onOpenDialog"
+                        press=".onOpenDialog"
                         class="sapUiSmallMarginBottom"
                         ariaHasPopup="Dialog" />
 
