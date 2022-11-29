@@ -20,8 +20,10 @@
                 <MenuButton id="_IDGenMenuButton1" enabled="true" text="물품 요청">
                     <menu>
                         <Menu id="_IDGenMenu1">
-                            <MenuItem id="_IDGenMenuItem1" text="물품 요청 목록"></MenuItem>
-                            <MenuItem id="_IDGenMenuItem2" text="물품 요청 현황"></MenuItem>
+                            <MenuItem press="onRequest" id="_IDGenMenuItem1" text="물품 요청 목록"/>
+                            <MenuItem id="_IDGenMenuItem2" text="물품 요청 현황"/>
+							<MenuItem press="onCompany" id="_IDGenMenuItem3" text="협력 업체 목록"/>
+
                         </Menu>
                     </menu>
                 </MenuButton>

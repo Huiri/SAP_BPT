@@ -77,6 +77,10 @@
       "Request" : {
         "type" : "sap.ui.model.json.JSONModel",
         "uri" : "model/RequestOrder.json"
+      },
+      "Vendor" : {
+        "type" : "sap.ui.model.json.JSONModel",
+        "uri" : "model/VendorMaster.json"
       }
     },
     "resources": {
@@ -98,8 +102,22 @@
       },
       "routes": [
         {
-          "name": "Request",
+          "name": "GridCompany",
+          "pattern": "GridCompany",
+          "target": [
+            "GridCompany"
+          ]
+        },
+        {
+          "name": "ResponsiveCompany",
           "pattern": "",
+          "target": [
+            "ResponsiveCompany"
+          ]
+        },
+        {
+          "name": "Request",
+          "pattern": "Request",
           "target": [
             "Request"
           ]
@@ -110,9 +128,38 @@
           "target" : [
             "CreateOrder"
           ]
+        },
+        {
+          "name": "Routeapp",
+          "pattern": "Routeapp",
+          "target": [
+            "Targetapp"
+          ]
+        },
+        {
+          "name": "AddCompany",
+          "pattern": "AddCompany",
+          "target": [
+            "AddCompany"
+          ]
         }
+        
+        
       ],
       "targets": {
+        "GridCompany": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "GridCompany",
+          "viewName": "GridCompany"
+        }, 
+        "ResponsiveCompany": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "ResponsiveCompany",
+          "viewName": "ResponsiveCompany"
+        }, 
         "Request": {
           "viewType": "XML",
           "transition": "slide",
@@ -125,6 +172,18 @@
           "transition": "slide",
           "viewId": "CreateOrder",
           "viewName": "CreateOrder"
+        },
+        "Targetapp": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "app",
+          "viewName": "app"
+        },
+        "AddCompany": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AddCompany",
+          "viewName": "AddCompany"
         }
       }
     },
