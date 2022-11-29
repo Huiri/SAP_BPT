@@ -10,7 +10,7 @@ sap.ui.define([
         "use strict";
 
         return Controller.extend("project1.controller.Request", { // 소괄호 안의 경로 파일을 컨트롤러로 사용하겠다는 선언
-            formatter:formatter, //해당 이름의 메소드로 사용하겠다고 선언
+            formatter:formatter, //뷰에서 사용할 메소드 명 : 직접 만든 formatter 함수
             
             onInit: function () {
             },
@@ -59,31 +59,33 @@ sap.ui.define([
                 // 한번 실행 이후 fragment 호출 처리를 위한 조건문
                 if(!this.byId("SortDialog")){
                     Fragment.load({
+                        // 즉 프레그먼트 자체의 아이디가 아닌 현재 화면의 viewid를 받아서 뿌려주기 위함
                         id: this.getView().getId(), //어느 뷰에 fragment 띄울 것인지 결정
                         // (즉 현재 화면에 띄우기 위해 현재 페이지 view id 불러옴)
                         // id : application-project1-display-component---Request (npm으로 build 시)
-                        // 특정값으로 지정하지 않을 시 계속 상속하기 때문에 id값을 지정해줌
+                        // 특정값으로 지정하지 않을 시 계속 상속하기 때문에 id값을 지정해줌(즉 fragment를 가리킴)
                         name : "project1.view.fragment.SortDialog",
                         // 불러올 fragment가 존재하는 경로
                         controller : this
                         // this를 현재 함수가 아닌 전체 controller를 가리키게 함
-                    }).then(function(oDialog){
+                    }).then(function(oDialog){ // 동기처리(load가 완료된 후에 실행)
                         this.getView().addDependent(oDialog);
                         // fragment는 생명주기와 model 존재 X. 뷰가 destory 될 때 자동으로 destory됨
                         // 자식요소 즉 fragment를 부모 요소 즉 view의 생명주기 이벤트와 모델을 상속시킴
                         // 로드했던 상태를 갖고 있으려고 view에 상속시킴
                         oDialog.open("filter");
                         // filter 필요 X, 삭제해도 정상적으로 작동
+                        // 프레그먼트 파일 화면에 띄우기
                     }.bind(this));//this가 함수 안의 this라 적용 X
                     //해결방안
                     //1) bind(this) : 컨트롤러를 가리키게 함
                     //2) 애초에 조건문 바깥에 this를 가리키는 변수 선언 -> 함수 안에서도 컨트롤러 전체를 의미하는 this로 사용
                 } else {
-                    this.byId("SortDialog").open("filter");
+                    this.byId("SortDialog").open("filter");//SortDialog라는 id값을 가진 화면에 띄우기(fragment dialog 띄우기)
                     
                 }
-                this.onSearch();
-                // 값이 유지될 경우 초기화 따로 X 사용
+                console.log(this.onSearch());
+                // this.onSearch();//화면에 보여주기 위함 -> 필요없다고 지우심
 
             },
 
@@ -96,9 +98,10 @@ sap.ui.define([
                 let aSorters = []; // 정렬 조건들을 한번에 저장하기 위한 배열  선언(정렬 순서와 정렬 기준, 2개가 존재하기 때문)
 
                 aSorters.push(new Sorter(sPath, bDescending)); // 배열에 정렬 조건(custom, 내림||오름차순)을 Sorter를 생성하여 push
+                //bDescending 대신 true, false 직접 하드코딩해도 상관 X
 
                 let oBinding = this.byId("ui_table").getBinding("rows"); //ui_table이라는 id값을 가진 테이블에 존재하는 데이터를 oBinding에 할당
-                oBinding.sort(aSorters); // 테이블에 존재하는 데이터를 설정된 정렬 조건으로 정렬
+                oBinding.sort(aSorters); // 테이블에 존재하는 데이터를 설정된 정렬 조건 적용
             },
             onCreateOrder :function (){
                 this.getOwnerComponent().getRouter().navTo("CreateOrder");

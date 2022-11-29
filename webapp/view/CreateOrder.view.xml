@@ -75,20 +75,20 @@
                             </VBox>
                             <!-- 버튼 type에 따른 ui 확인 위한 부분 -->
                             <HBox id="_IDGenVBox8">
-                                <Button text="hi" type="Accept"/>
-                                <Button text="hi" type="Ghost"/>
-                                <Button text="hi" type="Attention"/>
-                                <Button text="hi" type="Back"/>
-                                <Button text="hi" type="Critical"/>
-                                <Button text="hi" type="Default"/>
-                                <Button text="hi" type="Emphasized"/>
-                                <Button text="hi" type="Negative"/>
-                                <Button text="hi" type="Neutral"/>
-                                <Button text="hi" type="Reject"/>
-                                <Button text="hi" type="Success"/>
-                                <Button text="hi" type="Transparent"/>
-                                <Button text="hi" type="Unstyled"/>
-                                <Button text="hi" type="Up"/>
+                                <Button id="_IDGenButton3" text="hi" type="Accept"/>
+                                <Button id="_IDGenButton4" text="hi" type="Ghost"/>
+                                <Button id="_IDGenButton5" text="hi" type="Attention"/>
+                                <Button id="_IDGenButton6" text="hi" type="Back"/>
+                                <Button id="_IDGenButton7" text="hi" type="Critical"/>
+                                <Button id="_IDGenButton8" text="hi" type="Default"/>
+                                <Button id="_IDGenButton9" text="hi" type="Emphasized"/>
+                                <Button id="_IDGenButton10" text="hi" type="Negative"/>
+                                <Button id="_IDGenButton11" text="hi" type="Neutral"/>
+                                <Button id="_IDGenButton12" text="hi" type="Reject"/>
+                                <Button id="_IDGenButton13" text="hi" type="Success"/>
+                                <Button id="_IDGenButton14" text="hi" type="Transparent"/>
+                                <Button id="_IDGenButton15" text="hi" type="Unstyled"/>
+                                <Button id="_IDGenButton16" text="hi" type="Up"/>
                                 <!-- <layoutData>
                                     <layout:GridData id="_IDGenGridData8" span="XL12 L12 M12 S12"/>
                                 </layoutData> -->
