@@ -5,7 +5,7 @@
     <pages>
     <Page id="page" title="{i18n>title}">
         <content>
-            <mvc:XMLView id="_IDGenXMLView1" viewName="project1.view.HelloPanel"/>
+            <mvc:XMLView id="_IDGenXMLView1" viewName="project1.view.NestedView.HelloPanel"/>
 
         </content>
     </Page>
