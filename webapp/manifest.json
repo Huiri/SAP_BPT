@@ -81,6 +81,14 @@
       "Vendor" : {
         "type" : "sap.ui.model.json.JSONModel",
         "uri" : "model/VendorMaster.json"
+      },
+      "Material" : {
+        "type" : "sap.ui.model.json.JSONModel",
+        "uri" : "model/MaterialMaster.json"
+      },
+      "MaterialSelectOption" : {
+        "type" : "sap.ui.model.json.JSONModel",
+        "uri" : "model/MaterialSelectOption.json"
       }
     },
     "resources": {
@@ -110,7 +118,7 @@
         },
         {
           "name": "ResponsiveCompany",
-          "pattern": "",
+          "pattern": "ResponsiveCompany",
           "target": [
             "ResponsiveCompany"
           ]
@@ -142,11 +150,46 @@
           "target": [
             "AddCompany"
           ]
+        },
+        {
+          "name": "AddMaterial",
+          "pattern": "AddMaterial",
+          "target": [
+            "AddMaterial"
+          ]
+        },
+        {
+          "name": "GridMaterial",
+          "pattern": "",
+          "target": [
+            "GridMaterial"
+          ]
+        },
+        {
+          "name": "ResponsiveMaterial",
+          "pattern": "ResponsiveMaterial",
+          "target": [
+            "ResponsiveMaterial"
+          ]
         }
         
         
       ],
       "targets": {
+        "ResponsiveMaterial": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "ResponsiveMaterial",
+          "viewName": "ResponsiveMaterial"
+        }, 
+        "GridMaterial": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "GridMaterial",
+          "viewName": "GridMaterial"
+        }, 
         "GridCompany": {
           "viewType": "XML",
           "transition": "slide",
@@ -184,6 +227,12 @@
           "transition": "slide",
           "viewId": "AddCompany",
           "viewName": "AddCompany"
+        },
+        "AddMaterial": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "AddMaterial",
+          "viewName": "AddMaterial"
         }
       }
     },
