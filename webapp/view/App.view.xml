@@ -11,50 +11,26 @@
     <tnt:ToolPage id="toolPage">
 		<tnt:header>
 			<tnt:ToolHeader id="_IDGenToolHeader1">
-				<!-- <Image id="_IDGenImage1" height="1.5rem"
+				<Image id="_IDGenImage1" height="1.5rem"
 					   class="sapUiSmallMarginBegin"
-					   src="https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg" /> -->
-                <Image id="IdGenImage2" height = "1.5rem"
+					   src="https://www.sap.com/dam/application/shared/logos/sap-logo-svg.svg" />
+                <!-- <Image id="IdGenImage2" height = "1.5rem"
                      class="sapUiSmallMarginBegin"
-                     src="view/img/logo.svg"/>
+                     src="view/img/logo.svg"/> -->
                 <MenuButton id="_IDGenMenuButton1" enabled="true" text="물품 요청">
                     <menu>
                         <Menu id="_IDGenMenu1">
-                            <MenuItem press="onRequest" id="_IDGenMenuItem1" text="물품 요청 목록"/>
+                            <MenuItem press="toRequest" id="_IDGenMenuItem1" text="물품 요청 목록"/>
                             <MenuItem id="_IDGenMenuItem2" text="물품 요청 현황"/>
-							<MenuItem press="onCompany" id="_IDGenMenuItem3" text="협력 업체 목록"/>
+							<MenuItem press="toCompany" id="_IDGenMenuItem3" text="협력 업체 목록"/>
+							<MenuItem press="toMaterial" id="_IDGenMenuItem4" text="부품 목록"/>
 
                         </Menu>
                     </menu>
                 </MenuButton>
             </tnt:ToolHeader>
 		</tnt:header>
-		<!-- <tnt:subHeader>
-			<tnt:ToolHeader id="_IDGenToolHeader2">
-				<IconTabHeader id="_IDGenIconTabHeader1"
-						selectedKey="{/selectedKey}"
-						items="{path: '/navigation'}"
-						select=".onItemSelect"
-						mode="Inline">
-					<layoutData>
-						<OverflowToolbarLayoutData id="_IDGenOverflowToolbarLayoutData5" priority="NeverOverflow" shrinkable="true" />
-					</layoutData>
-					<items>
-						<IconTabFilter id="_IDGenIconTabFilter1"
-								items="{items}"
-								text="{title}"
-								key="{key}">
-							<items>
-								<IconTabFilter id="_IDGenIconTabFilter2"
-										text="{title}"
-										key="{key}">
-								</IconTabFilter>
-							</items>
-						</IconTabFilter>
-					</items>
-				</IconTabHeader>
-			</tnt:ToolHeader>
-		</tnt:subHeader> -->
+
 		<tnt:mainContents>
         <!-- 실제로 들어올 content 불러오는 페이지 -->
             <App id="app">
