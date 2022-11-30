@@ -1,0 +1,27 @@
+{
+    "SelectedStatus" : "",
+    "ProduceList": [
+        {
+            "ProduceStatus": "",
+            "Value": "전체"
+        },
+        {
+            "ProduceStatus": "A",
+            "Value": "생산"
+        },
+        {
+            "ProduceStatus": "B",
+            "Value": "미 사용"
+        },
+        {
+            "ProduceStatus": "C",
+            "Value": "단종 예정"
+        },
+        {
+            "ProduceStatus": "D",
+            "Value": "단종"
+        }
+        
+    ]
+
+}
