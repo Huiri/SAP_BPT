@@ -27,6 +27,25 @@ sap.ui.define([], function(){
                 default :
                     return sStatus;
             }
+        },
+        materialStatus : function (sStatus){
+            switch(sStatus){
+                case "A" :
+                    return "생산";
+                case "B" :
+                    return "미 사용";
+                case "C" :
+                    return "단종 예정";
+                case "D" :
+                    return "단종";
+                default :
+                    return sStatus;
+            }
+        },
+        numberWithCommas: function(x) {
+            var regexp = /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g;
+            return x.toString().replace(regexp, ",");
         }
+
     }
 })
