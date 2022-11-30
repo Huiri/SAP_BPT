@@ -8,11 +8,15 @@ sap.ui.define(
       return BaseController.extend("project1.controller.App", {
         onInit() {
         },
-        onRequest : function (){
+        toRequest : function (){
           this.getOwnerComponent().getRouter().navTo("Request");
         },
-        onCompany : function (){
+        toCompany : function (){
           this.getOwnerComponent().getRouter().navTo("GridCompany");
+        },
+        toMaterial : function(){
+          this.getOwnerComponent().getRouter().navTo("GridMaterial");
+
         }
       });
     }
