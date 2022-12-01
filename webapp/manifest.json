@@ -86,9 +86,9 @@
         "type" : "sap.ui.model.json.JSONModel",
         "uri" : "model/MaterialMaster.json"
       },
-      "MaterialSelectOption" : {
+      "SelectOption" : {
         "type" : "sap.ui.model.json.JSONModel",
-        "uri" : "model/MaterialSelectOption.json"
+        "uri" : "model/SelectOption.json"
       }
     },
     "resources": {
@@ -160,7 +160,7 @@
         },
         {
           "name": "GridMaterial",
-          "pattern": "",
+          "pattern": "GridMaterial",
           "target": [
             "GridMaterial"
           ]
@@ -170,6 +170,13 @@
           "pattern": "ResponsiveMaterial",
           "target": [
             "ResponsiveMaterial"
+          ]
+        },
+        {
+          "name": "Practice",
+          "pattern": "",
+          "target": [
+            "Practice"
           ]
         }
         
@@ -233,6 +240,12 @@
           "transition": "slide",
           "viewId": "AddMaterial",
           "viewName": "AddMaterial"
+        },
+        "Practice" : {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "Practice",
+          "viewName": "Practice"
         }
       }
     },

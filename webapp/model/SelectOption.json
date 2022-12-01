@@ -22,6 +22,27 @@
             "Value": "단종"
         }
         
+    ],
+    "CreditList": [
+        {
+            "CreditStatus": "",
+            "Value": "전체"
+        },
+        {
+            "CreditStatus": "trust",
+            "Value": "신용"
+        },
+        {
+            "CreditStatus": "hold",
+            "Value": "보류"
+        },
+        {
+            "CreditStatus": "caution",
+            "Value": "주의"
+        }
+        
     ]
+
+
 
 }
