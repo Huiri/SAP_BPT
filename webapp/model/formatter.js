@@ -44,7 +44,7 @@ sap.ui.define([], function(){
         },
         numberWithCommas: function(x) {
             var regexp = /\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g;
-            return x.toString().replace(regexp, ",");
+            return String(x).replace(regexp, ",");
         }
 
     }
