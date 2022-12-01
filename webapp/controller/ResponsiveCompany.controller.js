@@ -6,55 +6,20 @@ sap.ui.define(
     ],
     function(Controller, formatter, Filter, FilterOperator, Sorter, Fragment) {
       "use strict";
+      var that;
   
       return Controller.extend("project1.controller.ResponsiveCompany", {
         formatter : formatter,
         onInit() {
+            that = this;
         },
-        onSearch : function () {
-            let ComNum = this.byId("ComNum").getValue(); 
-            let ComName = this.byId("ComName").getValue(); 
-            let ComDate = this.byId("ComDate").getValue();
-            let ComPerson = this.byId("ComPerson").getValue();
-            let Status = this.byId("Status").getSelectedKey();
-
-            console.log(ComDate)
-            if(ComDate){
-                let ComYear = ComDate.split(".")[0]; //". " 기준으로 잘라서 앞의 연도 값을 변수에 저장
-                let ComMonth = ComDate.split(".")[1]; //". " 기준으로 잘라서 뒤의 일이 2자리가 아닐 경우 0을 붙여서 변수에 저장
-                let ComDay = ComDate.split(".")[2]; //". " 기준으로 잘라서 뒤의 일이 2자리가 아닐 경우 0을 붙여서 변수에 저장
-                
-                ComDate = ComYear + "-" + ComMonth+"-" + ComDay; //형식을 맞추어주기 위해서 연도-일자 형식으로 ReqDate 값에 저장
-                console.log(ComDate)
-
-
-            }
-
-            var aFilter = []; // 여러 필터 값을 지정할 수 있도록 배열로 받기
-
-            if(ComNum) {aFilter.push(new Filter("ComNum", FilterOperator.Contains, ComNum))} //ReqNum값이 존재할 경우 해당하는 값이 존재할 때 결과값으로 반환
-            if(ComName) {aFilter.push(new Filter("ComName", FilterOperator.Contains, ComName))} //ReqGood값이 존재할 경우 해당하는 값이 존재할 때 결과값으로 반환
-            if(ComDate) {aFilter.push(new Filter("Date", FilterOperator.Contains, ComDate))} //Requester값이 존재할 경우 해당하는 값이 존재할 때 결과값으로 반환
-            if(ComPerson) {aFilter.push(new Filter("ComPerson", FilterOperator.Contains, ComPerson))} //ReqDate값이 존재할 경우 해당하는 값이 존재할 때 결과값으로 반환
-            if(Status) {aFilter.push(new Filter("Status", FilterOperator.Contains, Status))} //ReqStatus값이 존재할 경우 해당하는 값이 존재할 때 결과값으로 반환
+        onSearch : function (aFilter) {
             
-            let oTable = this.byId("ui_table").getBinding("items"); //ui_table이라는 id값을 가진 테이블에 존재하는 데이터를 oData에 할당
-            oTable.filter(aFilter); // 테이블에 존재하는 데이터를 설정된 필터 조건으로 필터링
+            let oTable = that.byId("ui_table").getBinding("items"); 
+            oTable.filter(aFilter); 
 
         },
     
-
-        //input 초기화 위한 함수
-        onReset : function () {
-
-            this.byId("ComNum").setValue(""); 
-            this.byId("ComName").setValue(""); 
-            this.byId("ComDate").setValue(""); 
-            this.byId("Status").setSelectedKey(""); 
-            this.byId("ComPerson").setValue(""); 
-            //input 값 초기화
-            this.onSearch(); // this가 onSearch를 가리키도록 함
-        },
         //정렬을 위한 함수
         onSort : function () {
             // load가 되어있다면 load를 시켜주고 실행, 아니라면 그냥 open

@@ -29,10 +29,17 @@
             </FlexBox>    
         </layout:VerticalLayout>
 		<content>
-			<t:Table id="selection_table"
+			<!-- <t:Table id="selection_table"
                 selectionBehavior="RowOnly"
                 selectionMode="Single"
                 rowSelectionChange=".getContext"
+				rows="{Material>/productList}"
+				paste="onPaste"
+				ariaLabelledBy="title"> -->
+            <t:Table id="selection_table"
+                cellClick = ".getEventContext"
+                selectionBehavior="RowOnly"
+
 				rows="{Material>/productList}"
 				paste="onPaste"
 				ariaLabelledBy="title">

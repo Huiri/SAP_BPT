@@ -6,57 +6,24 @@ sap.ui.define(
     ],
     function(Controller, formatter, Filter, FilterOperator, Sorter, Fragment) {
       "use strict";
-  
+      var that;
       return Controller.extend("project1.controller.ResponsiveMaterial", {
         formatter : formatter,
-
+   
         onInit() {
+            that = this;
         },
         //검색을 위한 함수
-        onSearch : function () {
-            // sap.ui.controller("project1.controller.")
-            let category = this.byId("category").getValue(); 
-            let code = this.byId("code").getValue(); 
-            let name = this.byId("name").getValue();
-            let date = this.byId("date").getValue();
-            let produce = this.byId("produce").getSelectedKey();
-
-            console.log(date)
-            if(date){
-                let MYear = date.split(".")[0]; //". " 기준으로 잘라서 앞의 연도 값을 변수에 저장
-                let MMonth = date.split(".")[1]; //". " 기준으로 잘라서 뒤의 일이 2자리가 아닐 경우 0을 붙여서 변수에 저장
-                let MDay = date.split(".")[2]; //". " 기준으로 잘라서 뒤의 일이 2자리가 아닐 경우 0을 붙여서 변수에 저장
-                
-                date = MYear + "-" + MMonth+"-" + MDay; //형식을 맞추어주기 위해서 연도-일자 형식으로 ReqDate 값에 저장
-                console.log(date)
-
-
-            }
-
-            var aFilter = []; // 여러 필터 값을 지정할 수 있도록 배열로 받기
-
-            if(category) {aFilter.push(new Filter("category", FilterOperator.Contains, category))} //ReqNum값이 존재할 경우 해당하는 값이 존재할 때 결과값으로 반환
-            if(code) {aFilter.push(new Filter("code", FilterOperator.Contains, code))} //ReqGood값이 존재할 경우 해당하는 값이 존재할 때 결과값으로 반환
-            if(name) {aFilter.push(new Filter("name", FilterOperator.Contains, name))} //Requester값이 존재할 경우 해당하는 값이 존재할 때 결과값으로 반환
-            if(date) {aFilter.push(new Filter("date", FilterOperator.Contains, date))} //ReqDate값이 존재할 경우 해당하는 값이 존재할 때 결과값으로 반환
-            if(produce) {aFilter.push(new Filter("produce", FilterOperator.Contains, produce))} //ReqStatus값이 존재할 경우 해당하는 값이 존재할 때 결과값으로 반환
-            
-            let oTable = this.byId("ui_table").getBinding("items"); //ui_table이라는 id값을 가진 테이블에 존재하는 데이터를 oData에 할당
+        onSearch : function (aFilter) {
+            console.log(this);
+            console.log(that.getView());
+            console.log(that.byId("ui_table"));
+            console.log(sap.ui.getCore().byId("ui_table"));
+            let oTable = that.byId("ui_table").getBinding("items"); //ui_table이라는 id값을 가진 테이블에 존재하는 데이터를 oData에 할당
             oTable.filter(aFilter); // 테이블에 존재하는 데이터를 설정된 필터 조건으로 필터링
 
         },
     
-
-        //input 초기화 위한 함수
-        onReset : function () {
-            this.byId("category").setValue(""); 
-            this.byId("code").setValue(""); 
-            this.byId("name").setValue(""); 
-            this.byId("produce").setSelectedKey(""); 
-            this.byId("date").setValue(""); 
-            //input 값 초기화
-            this.onSearch(); // this가 onSearch를 가리키도록 함
-        },
         //정렬을 위한 함수
         onSort : function () {
             // load가 되어있다면 load를 시켜주고 실행, 아니라면 그냥 open
@@ -175,8 +142,12 @@ sap.ui.define(
                 // this.byId("pop_mname").setValue(this.getView().getModel("Material").getProperty(row_value)["name"]); 
                 this.byId("code").setValue(this.getView().getModel("Material").getProperty(row_value)["code"]); 
                 this.byId("name").setValue(this.getView().getModel("Material").getProperty(row_value)["name"]); 
+                this.onSearchOptReset();
                 this.onCloseDialog();
             },
+            getEventContext : function(e) {
+                
+            }
         
       });
     }
