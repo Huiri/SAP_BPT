@@ -72,11 +72,11 @@
                             </VBox>
                             <VBox id="_IDGenVBox7">
                                 <Label id="_IDGenLabel7" text="부품 생산 여부"/>
-                                <m:Select id="produce" width="100%"
+                                <Select id="produce" width="100%"
                                     items="{MaterialSelectOption>/ProduceList}">
                                     <c:Item id="_IDGenItem1" key="{MaterialSelectOption>ProduceStatus}" text="{MaterialSelectOption>Value}" />
                                 
-                                </m:Select>
+                                </Select>
                                 <layoutData>
                                     <layout:GridData id="_IDGenGridData7" span="XL6 L6 M3 S12"/>
                                 </layoutData>
